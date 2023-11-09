@@ -1,0 +1,111 @@
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    /*Например, если мы хотим задать 
+    высоту элемента в 50% от высоты видимой области браузера,
+     мы можем использовать следующее правило CSS:*/
+    min-height: 100vh;
+    background: var(--text-color);
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0 10px rgb(0, 0, 0, .2);
+    color: var(--text-color);
+    font-family: Work Sans;
+    
+}
+
+:root{
+    --text-color:#ffffff;
+    --background-color: #17171C;
+    --right-button-color:rgb(247, 197, 0);
+    --left-button-color:#2E2F38;
+}
+
+.Calculator{
+   
+}
+
+.container{
+    width: 280px;
+    height: 530px;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 0px  20px 25px 20px;
+    border: 2px solid rgb(255, 255, 255, .2);
+    background-color: var(--background-color);
+}
+
+.result{
+    min-height:115px ;
+    margin-top: 16px;
+    font-size: 96px;
+    display: flex;
+    justify-content: right;
+
+    font-weight: 300;
+}
+
+.block{
+    margin-top: 16px;
+    display: grid;
+    font-weight: 400;
+    font-size: 32px;
+    text-align: center;
+}
+
+.first-block-buttons {
+    grid-template-columns: 2fr 1fr 1fr ;
+}
+
+.block-buttons {  
+    grid-template-columns: repeat(4,1fr) ;
+}
+
+.block-last {
+    grid-template-columns: 3fr 1fr ;
+}
+
+.button-C {
+    margin-right: 16px;
+    background-color: rgb(109, 109, 81);
+    border-radius: 10px;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.button-Delete{
+    margin-right:16px ;
+    cursor: pointer;
+}
+.button {
+    border-radius: 17px;
+    margin-right: 16px;
+    background-color: var(--left-button-color);
+    padding: 12px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.button-last{
+    margin-right: 4px;
+    padding: 12px;
+    background-color: var(--right-button-color);
+    border-radius: 10px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.button-0 {
+   margin-right: 16px;
+   padding: 12px;
+   border-radius: 10px;
+   font-weight: 400;
+   background-color: var(--left-button-color);
+   cursor: pointer;
+}
+
+
+

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let array="123-45+6"
+        // let resultarray=array.split(['+', '-', ':']) ;
+       let str="1+2-3+5×9-4×9+2+1÷2";
+      
+       console.log(str)
+       
+      
+    //    console.log(str.indexOf('÷'))
+        let minusIndexOfMinus=0;
+        let minusIndexOfPlus=0;
+        let minusIndexOfMultiply=0;
+        let minusIndexOfDivide=0;
+        // console.log(minusIndexOf);
+       console.log(str.indexOf('-'))
+       console.log(str.indexOf('+'))
+       console.log(str)
+        let resultarray=str.split(/(?:\+|-|÷|×)+/).map(Number);
+        console.log(resultarray);
+        while(resultarray[1]!=null){
+            minusIndexOfMinus=str.indexOf('-')*(-1)-1;
+            console.log( minusIndexOfMinus);
+            minusIndexOfPlus=str.indexOf('+')*(-1)-1;
+            console.log(minusIndexOfPlus);
+            minusIndexOfMultiply=str.indexOf('×')*(-1)-1;
+            minusIndexOfDivide=str.indexOf('÷')*(-1)-1;
+            if(str.indexOf('+')==-1){
+                minusIndexOfPlus=-100;
+                console.log( minusIndexOfPlus);
+                console.log( minusIndexOfMinus);
+            }
+            if(str.indexOf('-')==-1){
+                minusIndexOfMinus=-100;
+                console.log( minusIndexOfPlus);
+                console.log( minusIndexOfMinus);
+            }
+            if(str.indexOf('×')==-1){
+                minusIndexOfMultiply=-100;
+                
+            }
+
+            if(str.indexOf('÷')==-1){
+                minusIndexOfDivide=-100;
+                
+            }
+            
+            if((minusIndexOfPlus>minusIndexOfMinus)&&(minusIndexOfPlus>minusIndexOfMultiply)&&(minusIndexOfPlus>minusIndexOfDivide)){
+                console.log('перешли в+')
+                console.log(str.indexOf('-'));
+                console.log(str.indexOf('+'));
+            resultarray[0]=resultarray[0]+resultarray[1];
+            console.log(resultarray)
+            resultarray.splice(1, 1);
+            console.log(resultarray)
+            str=str.replace('+','')
+            console.log(str)
+
+            }
+            else if((minusIndexOfMinus>minusIndexOfPlus)&&(minusIndexOfMinus>minusIndexOfMultiply)&&(minusIndexOfMinus>minusIndexOfDivide)){
+                console.log('перешли в-')
+                resultarray[0]=resultarray[0]-resultarray[1];
+            console.log(resultarray)
+            resultarray.splice(1, 1);
+            console.log(resultarray)
+            str=str.replace('-','')
+            console.log(str)
+            
+
+            }
+            else if((minusIndexOfMultiply>minusIndexOfMinus)&&(minusIndexOfMultiply>minusIndexOfPlus)&&(minusIndexOfMultiply>minusIndexOfDivide)){
+                console.log('перешли в ×')
+                resultarray[0]=resultarray[0]*resultarray[1];
+            console.log(resultarray)
+            resultarray.splice(1, 1);
+            console.log(resultarray)
+            str=str.replace('×','')
+            console.log(str)
+            }
+            else if((minusIndexOfDivide>minusIndexOfMinus)&&(minusIndexOfDivide>minusIndexOfPlus)&&(minusIndexOfDivide>minusIndexOfMultiply)){
+                console.log('перешли в ÷')
+                resultarray[0]=resultarray[0]/resultarray[1];
+            console.log(resultarray)
+            resultarray.splice(1, 1);
+            console.log(resultarray)
+            str=str.replace('÷','')
+            console.log(str)
+            }
+
+        }
+        
+
+        // console.log(resultarray)
+    </script>
+</body>
+</html>
