@@ -4,7 +4,7 @@ function deleteString()
     
 }
 
-buttonC.addEventListener('click', deleteString)
+buttonC.addEventListener('click', deleteString);
 
 
 

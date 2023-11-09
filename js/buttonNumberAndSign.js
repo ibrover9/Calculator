@@ -52,23 +52,23 @@ function gettingTheResult(){
             if((minusIndexOfPlus>minusIndexOfMinus)&&(minusIndexOfPlus>minusIndexOfMultiply)&&(minusIndexOfPlus>minusIndexOfDivide)){
             resultarray[0]=resultarray[0]+resultarray[1];
             resultarray.splice(1, 1);
-            stringResult=stringResult.replace('+','')
+            stringResult=stringResult.replace('+','');
             }
             else if((minusIndexOfMinus>minusIndexOfPlus)&&(minusIndexOfMinus>minusIndexOfMultiply)&&(minusIndexOfMinus>minusIndexOfDivide)){
                 resultarray[0]=resultarray[0]-resultarray[1];
             resultarray.splice(1, 1);
-            stringResult=stringResult.replace('-','')
+            stringResult=stringResult.replace('-','');
 
             }
             else if((minusIndexOfMultiply>minusIndexOfMinus)&&(minusIndexOfMultiply>minusIndexOfPlus)&&(minusIndexOfMultiply>minusIndexOfDivide)){
                 resultarray[0]=resultarray[0]*resultarray[1];
             resultarray.splice(1, 1);
-            stringResult=stringResult.replace('×','')
+            stringResult=stringResult.replace('×','');
             }
             else if((minusIndexOfDivide>minusIndexOfMinus)&&(minusIndexOfDivide>minusIndexOfPlus)&&(minusIndexOfDivide>minusIndexOfMultiply)){
                 resultarray[0]=resultarray[0]/resultarray[1];
             resultarray.splice(1, 1);
-            stringResult=stringResult.replace('÷','')
+            stringResult=stringResult.replace('÷','');
             }
 
         }
